@@ -10,6 +10,8 @@ import UIKit
 
 class ContainerViewController: UIViewController {
     
+    let sideMenuWidth: CGFloat = 80.0
+    
     let menuViewController: UIViewController
     let centerViewController: UINavigationController
     
@@ -29,7 +31,18 @@ class ContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Add the center view controller
+        addChildViewController(centerViewController)
+        view.addSubview(centerViewController.view)
+        centerViewController.didMove(toParentViewController: self)
+        
+        // Add the side menu view controller
+        addChildViewController(menuViewController)
+        view.addSubview(menuViewController.view)
+        menuViewController.didMove(toParentViewController: self)
+        
+        menuViewController.view.frame = CGRect(x: -sideMenuWidth, y: 0, width: sideMenuWidth, height: view.frame.height)
+        
     }
 
 }

@@ -9,11 +9,16 @@
 import UIKit
 
 class CenterViewController: UIViewController {
+    
+    var menuButton: MenuButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        menuButton = MenuButton()
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
+        navigationItem.title = "Side Menu Demo"
     }
 
 
@@ -28,9 +33,10 @@ class MenuButton: UIView {
     override func didMoveToSuperview() {
         frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         
-        imageView = UIImageView(image: UIImage(named: "menu"))
+        imageView = UIImageView(image: UIImage(named: "menu.png"))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MenuButton.didTap)))
+        addSubview(imageView)
     }
     
     func didTap() {
