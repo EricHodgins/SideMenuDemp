@@ -9,6 +9,7 @@
 import UIKit
 
 class MenuItem {
+    
     let title: String
     let color: UIColor
     
@@ -26,6 +27,14 @@ class MenuItem {
         }
         
         return items
+    }
+    
+    class var sharedItems: [MenuItem] {
+        struct Static {
+            static let items = MenuItem.demoItems(numberOfItems: 5)
+        }
+        
+        return Static.items
     }
 }
 
