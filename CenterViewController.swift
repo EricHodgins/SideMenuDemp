@@ -19,7 +19,9 @@ class CenterViewController: UIViewController {
         
         menuButton.tapHandler = {
             // Toggle the side menu...need container view controller
-            
+            if let containerViewController = self.navigationController?.parent as? ContainerViewController {
+                containerViewController.toggleSideMenu()
+            }
         }
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)

@@ -44,5 +44,20 @@ class ContainerViewController: UIViewController {
         menuViewController.view.frame = CGRect(x: -sideMenuWidth, y: 0, width: sideMenuWidth, height: view.frame.height)
         
     }
+    
+    func toggleSideMenu() {
+        
+        let isMenuOpen = floor(centerViewController.view.frame.origin.x / sideMenuWidth) == 1 ? true : false // less than 1 is Closed. Equal to 1 is Open
+        let moveX = isMenuOpen ? -sideMenuWidth : sideMenuWidth
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.menuViewController.view.frame.origin.x += moveX
+            self.centerViewController.view.frame.origin.x += moveX
+            
+        }, completion: {_ in
+        
+        })
+        
+    }
 
 }
