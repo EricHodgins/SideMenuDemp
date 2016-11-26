@@ -9,6 +9,8 @@
 import UIKit
 
 class SideMenuViewController: UITableViewController {
+    
+    var centerViewController: CenterViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
