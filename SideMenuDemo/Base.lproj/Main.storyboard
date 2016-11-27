@@ -50,20 +50,20 @@
         <scene sceneID="gIS-zn-SiU">
             <objects>
                 <tableViewController storyboardIdentifier="SideMenu" id="jYZ-oZ-lvV" customClass="SideMenuViewController" customModule="SideMenuDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ddf-65-4Qn">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="667"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ddf-65-4Qn">
+                        <rect key="frame" x="0.0" y="0.0" width="105" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="80" id="SWV-rd-IUx">
-                                <rect key="frame" x="0.0" y="28" width="80" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MenuCell" rowHeight="80" id="SWV-rd-IUx" customClass="SideMenuTableViewCell" customModule="SideMenuDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="105" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SWV-rd-IUx" id="4ID-IR-PQZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="105" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wy2-wM-Y8K">
-                                            <rect key="frame" x="29" y="9" width="23" height="61"/>
+                                            <rect key="frame" x="41" y="9" width="23" height="61"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="51"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -74,6 +74,9 @@
                                         <constraint firstItem="Wy2-wM-Y8K" firstAttribute="centerX" secondItem="4ID-IR-PQZ" secondAttribute="centerX" id="SbG-Y2-kU3"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="title" destination="Wy2-wM-Y8K" id="doP-fW-lWf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -82,7 +85,7 @@
                         </connections>
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="80" height="667"/>
+                    <size key="freeformSize" width="105" height="667"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PwH-kn-m2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -21,10 +21,10 @@ class SideMenuViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! SideMenuTableViewCell
 
         let menuItem = MenuItem.sharedItems[indexPath.row]
-        cell.textLabel?.text = menuItem.title
+        cell.title?.text = menuItem.title
         cell.backgroundColor = menuItem.color
         
         return cell
@@ -36,6 +36,6 @@ class SideMenuViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(view.frame.height / 5) 
+        return view.frame.height / CGFloat(MenuItem.sharedItems.count)
     }
 }

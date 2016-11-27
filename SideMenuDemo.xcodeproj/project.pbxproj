@@ -16,6 +16,7 @@
 		7A9FDB951DEA1A2A0071BA79 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9FDB941DEA1A2A0071BA79 /* SideMenuViewController.swift */; };
 		7A9FDB971DEA1AD30071BA79 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9FDB961DEA1AD30071BA79 /* ContainerViewController.swift */; };
 		7A9FDB991DEA1B330071BA79 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9FDB981DEA1B330071BA79 /* MenuItem.swift */; };
+		7A9FDB9B1DEA6AA40071BA79 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9FDB9A1DEA6AA40071BA79 /* SideMenuTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		7A9FDB941DEA1A2A0071BA79 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		7A9FDB961DEA1AD30071BA79 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		7A9FDB981DEA1B330071BA79 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		7A9FDB9A1DEA6AA40071BA79 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				7A9FDB941DEA1A2A0071BA79 /* SideMenuViewController.swift */,
 				7A9FDB981DEA1B330071BA79 /* MenuItem.swift */,
+				7A9FDB9A1DEA6AA40071BA79 /* SideMenuTableViewCell.swift */,
 			);
 			name = SideMenu;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				7A9FDB6F1DEA158A0071BA79 /* AppDelegate.swift in Sources */,
 				7A9FDB951DEA1A2A0071BA79 /* SideMenuViewController.swift in Sources */,
 				7A9FDB971DEA1AD30071BA79 /* ContainerViewController.swift in Sources */,
+				7A9FDB9B1DEA6AA40071BA79 /* SideMenuTableViewCell.swift in Sources */,
 				7A9FDB8F1DEA17020071BA79 /* CenterViewController.swift in Sources */,
 				7A9FDB991DEA1B330071BA79 /* MenuItem.swift in Sources */,
 			);

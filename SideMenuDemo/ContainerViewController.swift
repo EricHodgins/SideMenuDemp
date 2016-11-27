@@ -10,7 +10,7 @@ import UIKit
 
 class ContainerViewController: UIViewController {
     
-    let sideMenuWidth: CGFloat = 80.0
+    let sideMenuWidth: CGFloat = 105.0
     
     let menuViewController: UIViewController
     let centerViewController: UINavigationController
