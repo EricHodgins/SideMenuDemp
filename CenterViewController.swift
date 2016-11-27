@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class CenterViewController: UIViewController {
     
@@ -15,10 +16,16 @@ class CenterViewController: UIViewController {
         didSet {
             view.backgroundColor = menuItem.color
             menuContent.text = menuItem.title
+            setupGradientLayer()
+            animateBackgroundColor()
         }
     }
     
     @IBOutlet weak var menuContent: UILabel!
+
+    
+    var gradientLayer: CAGradientLayer!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +43,36 @@ class CenterViewController: UIViewController {
         navigationItem.title = "Side Menu Demo"
         
         menuItem = MenuItem.sharedItems.first!
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        view.layer.insertSublayer(gradientLayer, below: menuContent.layer)
+    }
+    
+    func setupGradientLayer() {
+        gradientLayer = CAGradientLayer()
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        
+        let colors = [menuItem.color.cgColor, UIColor.white.cgColor, menuItem.color.cgColor]
+        gradientLayer.colors = colors
+        
+        let locations: [NSNumber] = [0.25, 0.5, 0.75]
+        gradientLayer.locations = locations
+        
+        gradientLayer.frame = CGRect(x: -view.bounds.size.width, y: view.bounds.origin.y, width: 4 * view.bounds.size.width, height: view.bounds.size.height)
     }
 
-
+    func animateBackgroundColor() {
+        let gradientAnimation = CABasicAnimation(keyPath: "locations")
+        gradientAnimation.fromValue = [0, 0, 0.25]
+        gradientAnimation.toValue = [0.75, 1.0, 1.0]
+        gradientAnimation.duration = 5.0
+        gradientAnimation.repeatCount = .infinity
+        
+        gradientLayer.add(gradientAnimation, forKey: nil)
+    }
 
 }
 
