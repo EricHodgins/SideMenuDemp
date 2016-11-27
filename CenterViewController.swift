@@ -11,6 +11,14 @@ import UIKit
 class CenterViewController: UIViewController {
     
     var menuButton: MenuButton!
+    var menuItem: MenuItem! {
+        didSet {
+            view.backgroundColor = menuItem.color
+            menuContent.text = menuItem.title
+        }
+    }
+    
+    @IBOutlet weak var menuContent: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +34,8 @@ class CenterViewController: UIViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
         navigationItem.title = "Side Menu Demo"
+        
+        menuItem = MenuItem.sharedItems.first!
     }
 
 

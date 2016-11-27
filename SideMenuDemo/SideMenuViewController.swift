@@ -33,6 +33,11 @@ class SideMenuViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected row at index: \(indexPath.row)")
+        
+        centerViewController.menuItem = MenuItem.sharedItems[indexPath.row]
+        
+        let containerViewController = parent as! ContainerViewController
+        containerViewController.toggleSideMenu()
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
