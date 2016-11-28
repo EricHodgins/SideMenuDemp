@@ -68,7 +68,8 @@ class CenterViewController: UIViewController {
         let gradientAnimation = CABasicAnimation(keyPath: "locations")
         gradientAnimation.fromValue = [0, 0, 0.25]
         gradientAnimation.toValue = [0.75, 1.0, 1.0]
-        gradientAnimation.duration = 5.0
+        gradientAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        gradientAnimation.duration = 4.0
         gradientAnimation.repeatCount = .infinity
         
         gradientLayer.add(gradientAnimation, forKey: nil)
